@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     // Create a payment order when the component loads
-    fetch('http://localhost:4000/api/create-payment', {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/create-payment`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,13 +24,13 @@ const App = () => {
 
   const startRazorpayPayment = (orderId, amount) => {
     const options = {
-      key: 'your-razorpay-key-id', // Replace with your Razorpay Key ID
+      key: process.env.REACT_APP_RAZORPAY_KEY_ID, // Use Razorpay Key ID from env variable
       amount: amount, // in paisa
       currency: 'INR',
       order_id: orderId,
       handler: (response) => {
         // Payment success, now verify the payment
-        fetch('http://localhost:4000/api/verify-payment', {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/verify-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const App = () => {
   useEffect(() => {
     if (orderId) {
       const interval = setInterval(() => {
-        fetch(`http://localhost:4000/api/payment-status/${orderId}`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment-status/${orderId}`)
           .then(res => res.json())
           .then(data => {
             setStatus(data.status);

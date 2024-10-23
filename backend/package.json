@@ -1,0 +1,17 @@
+{
+  "name": "razorpay-payment-backend",
+  "version": "1.0.0",
+  "description": "Razorpay payment integration backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "razorpay": "^2.9.2",
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "vercel": "^32.4.1"
+  }
+}

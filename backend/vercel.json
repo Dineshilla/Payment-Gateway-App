@@ -11,9 +11,5 @@
       "src": "/api/(.*)",
       "dest": "backend/api/$1"
     }
-  ],
-  "env": {
-    "RAZORPAY_KEY_ID": "@RAZORPAY_KEY_ID",
-    "RAZORPAY_SECRET": "@RAZORPAY_SECRET"
-  }
+  ]
 }

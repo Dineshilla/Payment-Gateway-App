@@ -13,7 +13,7 @@
     }
   ],
   "env": {
-    "RAZORPAY_KEY_ID": "@razorpay_key_id",
-    "RAZORPAY_SECRET": "@razorpay_secret"
+    "RAZORPAY_KEY_ID": "@RAZORPAY_KEY_ID",
+    "RAZORPAY_SECRET": "@RAZORPAY_SECRET"
   }
 }
